@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>adidas | Change Is A Team Sport</title>
+    <style>
+        /* Core Branding & Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'AdihausDIN', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            letter-spacing: 0.5px;
+        }
+        body {
+            background-color: #fff;
+            color: #000;
+            overflow-x: hidden;
+        }
+        /* Top Announcement Bar */
+        .announcement-bar {
+            background-color: #edeef0;
+            text-align: center;
+            padding: 8px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        /* Navbar Layout */
+        header {
+            background-color: #fff;
+            border-bottom: 1px solid #edeef0;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .brand-identity {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        /* Minimalist 3-Stripes Logo Indicator */
+        .stripe-logo {
+            display: flex;
+            gap: 4px;
+            align-items: flex-end;
+            height: 24px;
+        }
+        .stripe {
+            width: 6px;
+            background-color: #000;
+            transform: skewX(-20deg);
+        }
+        .stripe:nth-child(1) { height: 12px; }
+        .stripe:nth-child(2) { height: 18px; }
+        .stripe:nth-child(3) { height: 24px; }
+        
+        .brand-name {
+            font-size: 22px;
+            font-weight: 900;
+            text-transform: lowercase;
+            line-height: 1;
+        }
+        nav a {
+            color: #000;
+            text-decoration: none;
+            margin-right: 25px;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 13px;
+        }
+        nav a:hover {
+            border-bottom: 2px solid #000;
+            padding-bottom: 2px;
+        }
+        /* Hero Campaign Ad Showcase */
+        .hero-banner {
+            position: relative;
+            background: url('https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1470&auto=format&fit=cover') no-repeat center center/cover;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            padding: 0 8%;
+        }
+        /* Overlay to keep white text clearly legible */
+        .hero-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(90deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 100%);
+        }
+        .hero-content {
+            position: relative;
+            color: #fff;
+            max-width: 550px;
+            z-index: 2;
+        }
+        .hero-content h1 {
+            font-size: 56px;
+            font-weight: 900;
+            text-transform: uppercase;
+            line-height: 0.95;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        .hero-content p {
+            font-size: 16px;
+            margin-bottom: 30px;
+            font-weight: 400;
+            line-height: 1.5;
+        }
+        /* Distinctive Adidas-Style Box Button */
+        .adidas-btn {
+            display: inline-flex;
+            align-items: center;
+            background-color: #fff;
+            color: #000;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 2px;
+            transition: background-color 0.2s, color 0.2s;
+            border: 1px solid #fff;
+        }
+        .adidas-btn:hover {
+            background-color: #000;
+            color: #fff;
+            border-color: #fff;
+        }
+        /* Product Spotlight Grid */
+        .campaign-grid {
+            max-width: 1300px;
+            margin: 80px auto;
+            padding: 0 40px;
+        }
+        .section-headline {
+            font-size: 32px;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .product-card {
+            background-color: #fff;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        .image-wrapper {
+            background-color: #f7f8fa;
+            width: 100%;
+            height: 350px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .product-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        .product-card:hover img {
+            transform: scale(1.05);
+        }
+        .card-details {
+            padding: 15px 5px;
+        }
+        .category-tag {
+            font-size: 11px;
+            color: #767677;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+        .product-name {
+            font-size: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        /* Corporate Footer */
+        footer {
+            background-color: #212529;
+            color: #fff;
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 12px;
+            margin-top: 100px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        footer p {
+            color: #9fa0a1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        Free shipping on all orders over ₹4,999. Join creators club today.
+    </div>
+ 
+    <!-- Header Navigation -->
+    <header>
+        <div class="brand-identity">
+            <div class="stripe-logo">
+                <div class="stripe"></div>
+                <div class="stripe"></div>
+                <div class="stripe"></div>
+            </div>
+            <div class="brand-name">adidas</div>
+        </div>
+        <nav>
+            <a href="#">Men</a>
+            <a href="#">Women</a>
+            <a href="#">Kids</a>
+            <a href="#">Release Dates</a>
+        </nav>
+    </header>
+ 
+    <!-- Main Hero Ad Banner -->
+    <section class="hero-banner">
+        <div class="hero-content">
+            <h1>You Got This.</h1>
+            <p>When you focus on the baseline, pressure turns into performance. Discover responsive energy return with our latest footwear engineered for pure athletic progress.</p>
+            <a href="#" class="adidas-btn">Shop Ultraboost</a>
+        </div>
+    </section>
+ 
+    <!-- Product Grid Section -->
+    <main class="campaign-grid">
+        <h2 class="section-headline">Trending Gear</h2>
+        <div class="grid-container">
+            <!-- Product Item 1 -->
+            <a href="#" class="product-card">
+                <div class="image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?q=80&w=1374&auto=format&fit=cover" alt="adidas Ultraboost Light Shoes">
+                </div>
+                <div class="card-details">
+                    <div class="category-tag">Running • Originals</div>
+                    <div class="product-name">Ultraboost Light Shoes</div>
+                </div>
+            </a>
+ 
+            <!-- Product Item 2 -->
+            <a href="#" class="product-card">
+                <div class="image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1556906781-9a412961c28c?q=80&w=1287&auto=format&fit=cover" alt="adidas 3-Stripes Track Jacket">
+                </div>
+                <div class="card-details">
+                    <div class="category-tag">Apparel • Performance</div>
+                    <div class="product-name">3-Stripes Track Jacket</div>
+                </div>
+            </a>
+ 
+            <!-- Product Item 3 -->
+            <a href="#" class="product-card">
+                <div class="image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=1450&auto=format&fit=cover" alt="adidas Samba Classic Icons">
+                </div>
+                <div class="card-details">
+                    <div class="category-tag">Lifestyle • Heritage</div>
+                    <div class="product-name">Samba Classic Icons</div>
+                </div>
+            </a>
+        </div>
+    </main>
+ 
+    <!-- Footer Content -->
+    <footer>
+        <p>&copy; 2026 adidas International Inc. Custom ad conceptual mockup display.</p>
+    </footer>
+</body>
+</html>
